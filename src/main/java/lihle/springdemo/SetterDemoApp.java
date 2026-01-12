@@ -1,14 +1,12 @@
 package lihle.springdemo;
 
-import lihle.springdemo.Coach;
-import lihle.springdemo.CricketCoach;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 public class SetterDemoApp {
 
     public static void main (String[] args){
         ClassPathXmlApplicationContext context =
-                new ClassPathXmlApplicationContext("applicationContext.xml");
+                new ClassPathXmlApplicationContext("lesson_01_dependencies/applicationContext.xml");
 
         Coach theCoach = context.getBean("CricketCoach", CricketCoach.class);
 

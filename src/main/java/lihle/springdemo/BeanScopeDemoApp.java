@@ -5,7 +5,7 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
 public class BeanScopeDemoApp {
     public static void main (String[] args) {
         ClassPathXmlApplicationContext context =
-                new ClassPathXmlApplicationContext("beanScope-applicationContext2.xml");
+                new ClassPathXmlApplicationContext("lesson_01_dependencies/beanScope-applicationContext2.xml");
 
         //retrieve bean from spring container
 
