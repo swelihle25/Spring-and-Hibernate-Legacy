@@ -1,22 +1,24 @@
 package spring.annotations;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Component;
 
 @Component()
 public class TennisCoach implements Coach{
-
+    @Autowired
+    @Qualifier("randomFortuneService")
     private FortuneService fortuneService;
 
     //define a default constructor
     public TennisCoach(){
         System.out.println(">> TennisCoach: inside default constructor");
     }
-    @Autowired
-    public void setFortuneService(FortuneService theFortuneService){
-        System.out.println(">>TennisCoach: inside setFortuneService method");
-        fortuneService = theFortuneService;
-    }
+//    @Autowired
+//    public void setFortuneService(FortuneService theFortuneService){
+//        System.out.println(">>TennisCoach: inside setFortuneService method");
+//        fortuneService = theFortuneService;
+//    }
 
 /*
     @Autowired
@@ -31,7 +33,7 @@ public class TennisCoach implements Coach{
 
     @Override
     public String getDailyFortune() {
-        return "Winning is not everything, but wanting to win is.";
+        return fortuneService.getFortune();
     }
 
 }
